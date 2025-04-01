@@ -1,0 +1,109 @@
+@import "../../../css-config/mixins.scss";
+.product-card {
+  cursor: pointer;
+  width: calc(50% - 5px);
+  margin-bottom: 20px;
+
+  @include md {
+    width: calc(25% - 15px);
+    margin: 0 auto;
+  }
+
+  .thumbnail {
+    width: 100%;
+    height: 180px;
+    background-color: rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+
+    @include md {
+      height: 350px;
+    }
+
+    img {
+      transition: transform 0.3s ease;
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .prod-details {
+    .name {
+      font-size: 18px;
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+      @include md {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .price {
+      font-size: 14px;
+
+      @include md {
+        font-size: 18px;
+      }
+    }
+
+    .rating {
+      display: flex;
+      gap: 5px;
+
+      .filled-star,
+      .empty-star {
+        font-size: 25px;
+        margin: 10px 0;
+      }
+
+      .empty-star {
+        color: lightgray;
+      }
+    }
+
+    .button-group {
+      display: flex;
+      margin-top: 10px;
+      gap: 20px;
+
+      .icon-button {
+        background-color: #ff0099;
+        color: white;
+        border: none;
+        border-radius: 5%; // Makes the button circular
+        width: 50px;
+        height: 40px;
+
+        cursor: pointer;
+        transition: background 0.3s;
+
+        svg {
+          font-size: 20px; // Ensures the icon fits well within the circular button
+        }
+
+        &:hover {
+          background-color: #e60073;
+        }
+
+        &:focus {
+          outline: 2px solid #6516aa;
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .thumbnail img {
+      transform: scale(1.2);
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@import "../../css-config/mixins.scss";
+
+.products-container {
+  margin: 50px 0; // Base margin for all screens
+
+  @include md {
+    margin: 75px 0; // Increased margin for medium and larger screens
+  }
+
+  .sec-heading {
+    margin-bottom: 20px; // Margin below heading
+    font-size: 18px; // Base font size
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @include md {
+      margin-bottom: 35px; // Increased margin for medium and larger screens
+      font-size: 24px; // Increased font size for medium screens
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      margin-top: 5px;
+      width: 50px; // Width of the underline
+      height: 3px; // Height of the underline
+      background-color: #8e2de2; // Color of the underline
+
+      @include md {
+        margin-top: 10px; // Increased margin for the underline on medium screens
+      }
+    }
+  }
+
+  .products {
+    display: flex;
+    flex-flow: wrap; // Allow products to wrap in the container
+    gap: 10px; // Base gap between products
+
+    @include md {
+      gap: 20px; // Increased gap for medium and larger screens
+    }
+
+    @include sm {
+      justify-content: center; // Center products on small screens
+    }
+  }
+}

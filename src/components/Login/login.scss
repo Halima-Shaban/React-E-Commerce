@@ -1,0 +1,116 @@
+@import "../../css-config/mixins.scss";
+
+.login-container {
+  max-width: 1000px; // Set a maximum width for the container
+  margin: 0 auto; // Center the container
+  display: flex;
+  flex-direction: column; // Stack elements on small screens
+  align-items: center; // Center items horizontally
+  padding: 20px;
+
+  @include md {
+    flex-direction: row; // Change to row on medium screens and up
+    justify-content: space-between; // Space out image and form
+  }
+}
+
+.login-image {
+  flex: 0.5; // Allow image to take half the space
+  max-width: 100%; // Ensure image does not exceed container width
+}
+
+.login-image img {
+  width: 100%; // Make the image responsive
+  height: auto; // Maintain aspect ratio
+  border-radius: 10px; // Add rounded corners to the image
+}
+
+.login-form {
+  flex: 0.4; // Allow form to take up the remaining space
+  padding: 20px; // Add padding inside the form container
+}
+
+.login-form h2 {
+  font-size: 28px; // Set font size for the heading
+  font-weight: bold; // Bold text
+  margin-bottom: 10px; // Margin below heading
+}
+
+.login-form p {
+  font-size: 14px; // Set font size for description
+  color: #666; // Gray color for the text
+}
+
+.login-form input {
+  width: 100%; // Full width inputs
+  padding: 10px; // Padding inside input fields
+  margin: 10px 0; // Margin above and below input fields
+  font-size: 16px; // Set font size for inputs
+  border: 1px solid #ccc; // Light border color for inputs
+  border-radius: 5px; // Rounded corners for inputs
+  transition: border 0.3s; // Transition effect for focus state
+
+  &:focus {
+    border-color: #ff0099; // Change border color on focus
+    outline: none; // Remove default outline
+  }
+}
+
+.login-btn {
+  width: 100%; // Full width button
+  padding: 12px; // Padding inside button
+  background-color: #ff0099; // Button background color
+  color: white; // Button text color
+  font-size: 16px; // Set font size for button
+  border: none; // Remove default border
+  border-radius: 5px; // Rounded corners for button
+  cursor: pointer; // Pointer cursor on hover
+  transition: background-color 0.3s; // Transition effect for background color
+
+  &:hover {
+    background-color: darken(#ff0099, 10%); // Darken on hover
+  }
+}
+
+.sign-up {
+  text-align: right; // Align the sign-up text to the right
+  margin-top: 10px; // Margin above sign-up text
+}
+
+.sign-up a {
+  color: #ff0099; // Link color
+  text-decoration: none; // Remove underline from link
+  transition: color 0.3s; // Transition effect for link color
+
+  &:hover {
+    text-decoration: underline; // Underline on hover
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column; // Stack items on smaller screens
+    padding: 10px; // Reduce padding for smaller screens
+  }
+  .login-image {
+    flex: 0; // Allow image to shrink
+    margin-bottom: 20px; // Add margin for spacing
+  }
+  .login-form {
+    flex: 0; // Allow form to shrink
+    width: 100%; // Full width on smaller screens
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form h2 {
+    font-size: 24px; // Adjust heading size for smaller screens
+  }
+  .login-form p {
+    font-size: 12px; // Adjust paragraph size for smaller screens
+  }
+  .login-btn {
+    padding: 10px; // Adjust padding for smaller buttons
+  }
+}

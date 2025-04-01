@@ -1,0 +1,143 @@
+@import "../../css-config/mixins.scss";
+
+.signup-container {
+  max-width: calc(100% - 200px);
+  margin: 0 auto;
+  display: flex;
+
+  padding: 20px;
+
+  @include md {
+    flex-direction: row; // Horizontal layout on medium and larger screens
+  }
+
+  @include sm {
+    flex-direction: column; // Stack vertically on small screens
+    padding: 10px; // Reduce padding on smaller screens
+  }
+}
+
+.signup-image {
+  flex: 0.5;
+
+  @include sm {
+    flex: 1; // Take full width on small screens
+    margin-bottom: 20px; // Add margin below the image on small screens
+  }
+}
+
+.signup-image img {
+  width: 50%;
+  border-radius: 10px;
+}
+
+.signup-form {
+  width: 50%;
+
+  flex: 0.4;
+  padding: 20px;
+
+  @include sm {
+    flex: 1; // Take full width on small screens
+  }
+}
+
+.signup-form h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+
+  @include md {
+    font-size: 32px; // Increase font size on medium screens and larger
+  }
+}
+
+.signup-form p {
+  font-size: 14px;
+  color: #666;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+
+  @include sm {
+    font-size: 14px; // Slightly reduce font size on small screens
+  }
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff0099;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+
+  @include sm {
+    font-size: 14px; // Adjust font size on small screens
+  }
+}
+
+.google-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include sm {
+    font-size: 14px; // Adjust font size on small screens
+  }
+}
+
+.google-btn img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.already-have-account {
+  margin-top: 20px;
+  text-align: center;
+
+  @include sm {
+    margin-top: 10px; // Reduce margin on small screens
+  }
+}
+
+.already-have-account a {
+  color: #ff0099;
+  text-decoration: none;
+
+  @include sm {
+    font-size: 14px; // Adjust font size on small screens
+  }
+}
+
+.already-have-account a:hover {
+  text-decoration: underline;
+}
+.error-message {
+  color: red; // Set error text color to red
+  margin: 10px 0;
+}
+
+.success-message {
+  color: green; // Set success text color to green
+  margin: 10px 0;
+}

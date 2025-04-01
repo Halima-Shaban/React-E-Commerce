@@ -1,0 +1,157 @@
+@import "../../css-config/mixins.scss";
+
+.profile-page {
+  max-width: 1200px; // Set a max-width for larger screens
+  margin: 0 auto; // Center the container
+  display: flex;
+  flex-wrap: wrap; // Allow items to wrap on small screens
+  padding: 20px;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+
+  @include md {
+    max-width: 250px; // Fixed width for sidebar on larger screens
+  }
+}
+
+.sidebar h3 {
+  margin-top: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s; // Smooth hover transition
+
+  &:hover {
+    background-color: #f1f1f1; // Highlight on hover
+  }
+}
+
+.sidebar ul li.active {
+  font-weight: bold;
+  color: #ff007f;
+}
+
+.sidebar ul li.my-fav:hover {
+  font-weight: bold;
+  color: #ff007f;
+}
+
+.profile-form {
+  flex: 2;
+  padding: 20px;
+
+  @include md {
+    padding-left: 40px; // Add space for larger screens
+  }
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-header h2 {
+  margin: 0;
+}
+
+.logout-btn {
+  background-color: #ff007f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s; // Smooth hover transition
+}
+
+.logout-btn:hover {
+  background-color: #e60073;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s; // Smooth focus transition
+
+  &:focus {
+    border-color: #ff007f; // Change border color on focus
+    outline: none; // Remove default outline
+  }
+}
+
+h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.save-btn {
+  background-color: #ff007f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s; // Smooth hover transition
+}
+
+.save-btn:hover {
+  background-color: #e60073;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .profile-page {
+    flex-direction: column; // Stack items vertically on small screens
+  }
+
+  .sidebar {
+    border-right: none; // Remove border on small screens
+    border-bottom: 1px solid #ddd; // Add border at the bottom
+    max-width: none; // Remove max-width for sidebar on small screens
+  }
+
+  .profile-form {
+    padding-left: 0; // Reset padding for the profile form
+  }
+}
+
+@media (max-width: 480px) {
+  .logout-btn,
+  .save-btn {
+    width: 100%; // Full-width buttons on small screens
+    padding: 12px; // Slightly increase padding for touch targets
+  }
+
+  .form-group input {
+    padding: 12px; // Increase padding for better touch interaction
+  }
+
+  h3 {
+    font-size: 18px; // Adjust heading size for smaller screens
+  }
+}

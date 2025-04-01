@@ -1,0 +1,142 @@
+@import "../../css-config/mixins.scss";
+
+.checkout-container {
+  max-width: calc(100% - 50px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.billing-details,
+.order-summary {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.billing-details {
+  width: 60%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 20px; // Space on mobile
+  }
+}
+
+.billing-details h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  &.error {
+    border-color: #ff0000; // Red border for errors
+  }
+}
+
+.form-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.order-summary {
+  width: 35%;
+
+  @media (max-width: 768px) {
+    width: 100%; // Full width on mobile
+  }
+}
+
+.cart-items {
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.order-totals {
+  margin-bottom: 20px;
+}
+
+.totals-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.payment-methods h3 {
+  margin-bottom: 10px;
+}
+
+.payment-option {
+  margin-bottom: 10px;
+}
+
+.coupon-code {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.coupon-code input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.apply-coupon {
+  background-color: #ff007f;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.apply-coupon:hover {
+  background-color: #e60073;
+}
+
+.place-order {
+  background-color: #ff007f;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.place-order:hover {
+  background-color: #e60073;
+}

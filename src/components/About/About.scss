@@ -1,0 +1,101 @@
+@import "../../css-config/mixins.scss"; // Import mixins
+
+.about-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: calc(100% - 200px);
+
+  @include md {
+    // Use the md mixin for medium screens
+    width: 100%; // On medium screens, use full width
+    align-items: center; // Center team members on smaller screens
+  }
+}
+
+.mission-section h2,
+.choose-us-section h2,
+.team-section h2,
+.about-section h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.mission-section p,
+.about-section p {
+  font-size: 1rem; // Changed to rem for accessibility
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.about-section,
+.mission-section,
+.choose-us-section,
+.team-section {
+  margin-bottom: 40px;
+}
+
+.choose-us-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.choose-us-section ul li {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem; // Changed to rem for accessibility
+  color: #333;
+  width: 25%;
+  transition: background-color 0.3s; // Added transition effect
+
+  &:hover {
+    // Nesting for hover effect
+    background-color: #e0e0e0; // Slightly darker background on hover
+  }
+}
+
+.team-members {
+  display: flex;
+  justify-content: space-between;
+
+  @include md {
+    // Use the md mixin for medium screens
+    flex-wrap: wrap;
+    align-items: center; // Center team members on smaller screens
+  }
+}
+
+.team-member {
+  text-align: center;
+  width: 30%;
+
+  @include md {
+    // Use the md mixin for medium screens
+    width: 80%; // Make team members take more width on mobile
+    margin-bottom: 20px; // Add space between team members
+  }
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.team-member h3 {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.team-member p {
+  font-size: 16px;
+  color: #777;
+}
